@@ -1,0 +1,50 @@
+{
+  "name": "discourse-api",
+  "version": "1.0.0",
+  "description": "Disourse api",
+  "main": "dist/components/Discourse.js",
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karen Stepanyan",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "add-module-exports",
+      "transform-es2015-modules-umd"
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  },
+  "files": [ "dist/*" ],
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/register": "^7.12.1",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
