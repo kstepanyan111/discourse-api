@@ -1,15 +1,22 @@
 {
-  "name": "discourse-api",
+  "name": "discourse.api2",
   "version": "1.0.0",
-  "description": "Disourse api",
+  "description": "Discourse api 2",
   "main": "dist/components/Discourse.js",
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Karen Stepanyan",
+  "author": "Karen Stepanyan <kstepananyan@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kstepanyan111/discourse-api.git"
+  },
+  "keywords": [
+    "dicsourse"
+  ],
   "babel": {
     "presets": [
       "@babel/preset-env"
