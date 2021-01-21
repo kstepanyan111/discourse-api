@@ -172,6 +172,12 @@
 
         return this._request('POST', '/posts.json', data, options, cb);
       }
+    }, {
+      key: "getPrivateMessages",
+      value: function getPrivateMessages(_ref2, options, cb) {
+        var username = _ref2.username;
+        return this._request('GET', "/topics/private-messages/".concat(username, ".json"), null, options, cb);
+      }
     }]);
 
     return Topic;

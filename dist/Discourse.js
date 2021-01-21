@@ -1035,22 +1035,34 @@
                 case 23:
                   _context.prev = 23;
                   _context.t0 = _context["catch"](6);
+
+                  if (_context.t0.response) {
+                    _context.next = 28;
+                    break;
+                  }
+
+                  _context.t0 = new ResponseError('Discourse api error: Response is undefined', path, {
+                    status: 500
+                  });
+                  throw _context.t0;
+
+                case 28:
                   _errorMsg = 'message' in _context.t0.response.data ? _context.t0.response.data.message : JSON.stringify(_context.t0.response.data.errors);
                   _context.t0 = new ResponseError(_errorMsg, path, _context.t0.response);
 
                   if (!cb) {
-                    _context.next = 31;
+                    _context.next = 34;
                     break;
                   }
 
                   cb(_context.t0);
-                  _context.next = 32;
+                  _context.next = 35;
                   break;
 
-                case 31:
+                case 34:
                   throw _context.t0;
 
-                case 32:
+                case 35:
                 case "end":
                   return _context.stop();
               }
@@ -1306,6 +1318,12 @@
 
         return this._request('POST', '/posts.json', data, options, cb);
       }
+    }, {
+      key: "getPrivateMessages",
+      value: function getPrivateMessages(_ref2, options, cb) {
+        var username = _ref2.username;
+        return this._request('GET', "/topics/private-messages/".concat(username, ".json"), null, options, cb);
+      }
     }]);
 
     return Topic;
@@ -1453,7 +1471,7 @@
     }
     /**
      * Create new user
-     * @param {object} [object] 
+     * @param {object} [object]
      * @param {string} [object.username]
      * @param {string} [object.email]
      * @param {string} [object.password]
@@ -1491,6 +1509,11 @@
       key: "delete",
       value: function _delete(id, options, cb) {
         return this._request('DELETE', '/admin/users/' + id + '.json', null, options, cb);
+      }
+    }, {
+      key: "updatePMAccess",
+      value: function updatePMAccess(data, options, cb) {
+        return this._request('PUT', "/u/".concat(options.username, ".json"), data, options, cb);
       }
     }]);
 

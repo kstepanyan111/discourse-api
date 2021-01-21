@@ -136,7 +136,7 @@
     }
     /**
      * Create new user
-     * @param {object} [object] 
+     * @param {object} [object]
      * @param {string} [object.username]
      * @param {string} [object.email]
      * @param {string} [object.password]
@@ -174,6 +174,11 @@
       key: "delete",
       value: function _delete(id, options, cb) {
         return this._request('DELETE', '/admin/users/' + id + '.json', null, options, cb);
+      }
+    }, {
+      key: "updatePMAccess",
+      value: function updatePMAccess(data, options, cb) {
+        return this._request('PUT', "/u/".concat(options.username, ".json"), data, options, cb);
       }
     }]);
 

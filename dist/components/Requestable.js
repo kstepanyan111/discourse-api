@@ -437,22 +437,34 @@
                 case 23:
                   _context.prev = 23;
                   _context.t0 = _context["catch"](6);
+
+                  if (_context.t0.response) {
+                    _context.next = 28;
+                    break;
+                  }
+
+                  _context.t0 = new ResponseError('Discourse api error: Response is undefined', path, {
+                    status: 500
+                  });
+                  throw _context.t0;
+
+                case 28:
                   _errorMsg = 'message' in _context.t0.response.data ? _context.t0.response.data.message : JSON.stringify(_context.t0.response.data.errors);
                   _context.t0 = new ResponseError(_errorMsg, path, _context.t0.response);
 
                   if (!cb) {
-                    _context.next = 31;
+                    _context.next = 34;
                     break;
                   }
 
                   cb(_context.t0);
-                  _context.next = 32;
+                  _context.next = 35;
                   break;
 
-                case 31:
+                case 34:
                   throw _context.t0;
 
-                case 32:
+                case 35:
                 case "end":
                   return _context.stop();
               }
