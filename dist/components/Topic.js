@@ -178,6 +178,12 @@
         var username = _ref2.username;
         return this._request('GET', "/topics/private-messages/".concat(username, ".json"), null, options, cb);
       }
+    }, {
+      key: "getSentPrivateMessages",
+      value: function getSentPrivateMessages(_ref3, options, cb) {
+        var username = _ref3.username;
+        return this._request('GET', "/topics/private-messages-sent/".concat(username, ".json"), null, options, cb);
+      }
     }]);
 
     return Topic;

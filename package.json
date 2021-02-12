@@ -1,6 +1,6 @@
 {
   "name": "discourse.api2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Discourse api 2",
   "main": "dist/components/Discourse.js",
   "scripts": {
