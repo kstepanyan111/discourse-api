@@ -151,6 +151,11 @@
       value: function getTopics(categoryId, options, cb) {
         return this._request('GET', "/c/".concat(categoryId, ".json"), null, options, cb);
       }
+    }, {
+      key: "createCategory",
+      value: function createCategory(data, options, cb) {
+        return this._request('POST', "/categories.json", data, options, cb);
+      }
     }]);
 
     return Category;
