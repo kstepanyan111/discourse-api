@@ -1335,6 +1335,11 @@
         var username = _ref3.username;
         return this._request('GET', "/topics/private-messages-sent/".concat(username, ".json"), null, options, cb);
       }
+    }, {
+      key: "deleteTopic",
+      value: function deleteTopic(id, options, cb) {
+        return this._request('DELETE', "/t/".concat(id, ".json"), null, options, cb);
+      }
     }]);
 
     return Topic;
